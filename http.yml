@@ -2,8 +2,12 @@
  become: yes
  tasks:
   -name: install http
-   yum
+   yum:
      name: httpd
      state: started
      
+  -name: Start HTTPD
+   systemd:
+     name: httpd
+     state: started
   
